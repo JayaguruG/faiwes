@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faiwes Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="FaiwesLogo1.jpg" alt="FAIWES" class="header-image">
+            <nav>
+                <ul>
+                    <li><a href="#home" id="home-link">HOME</a></li>
+                    <li><a href="#about" id="about-link">ABOUT US</a></li>
+                    <li class="dropdown-parent">
+                        <a href="#services">SERVICES</a>
+                        <ul class="dropdown">
+                            <li><a href="#custom-development">Custom Software Development</a></li>
+                            <li><a href="#mobile-apps">Mobile App Development</a></li>
+                            <li><a href="#web-development">Web Development</a></li>
+                            <li><a href="#it-consulting">IT Consulting</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact-us" id="contact-link">CONTACT US</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Innovative Solutions for Your Business</h2>
+            <p>Transforming ideas into reality with cutting-edge technology.</p>
+            <a href="#services" class="btn">Explore Our Services</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p>At Faiwes Technologies, we are passionate about building innovative software solutions that empower businesses 
+                to achieve their goals. Our team of dedicated experts brings extensive experience across various technologies 
+                and industries, ensuring we provide solutions that are not only advanced but also tailored to each client's 
+                unique needs. We believe in a collaborative approach, working closely with our clients 
+                to understand their challenges and deliver transformative results. 
+                Guided by our commitment to quality, integrity, and excellence, we continuously strive 
+                to exceed expectations and drive success in every project we undertake.</p>
+        </div>
+    </section>
+    
+    <section class="flip-box-section">
+        <h2 class="section-title">Our Specialties</h2> <!-- Change the text as needed -->
+        <div class="flip-box-container">
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Data Engineering</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="flip-box-back-inner">
+                            <p>Faiwes harnesses the power of data engineering to 
+                                transform raw data into actionable insights, 
+                                driving innovation and efficiency for your business.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Data Analytics</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="flip-box-back-inner">
+                            <p>At Faiwes, we turn raw data into actionable insights, identifying patterns, trends, and predictions to make 
+                                informed decisions. From boosting efficiency to enhancing customer experience, 
+                                data analytics provides the foundation for strategic growth and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Custom Software Development</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="flip-box-back-inner">
+                            <p>We create software designed to meet specific business needs, providing a unique solution that off-the-shelf software cannot. 
+                                This approach ensures higher efficiency and flexibility, allowing businesses to adapt as their needs evolve.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Mobile App Development</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="flip-box-back-inner">
+                            <p>At Faiwes, we develop mobile applications that combine sleek design with robust functionality 
+                                to elevate user experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Web Development</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="flip-box-back-inner">
+                            <p>Crafting visually appealing and fully optimized web applications that provide seamless user experiences, 
+                                built to enhance your brand's digital presence and drive engagement across devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-box">
+                <div class="flip-box-inner">
+                    <div class="flip-box-front">
+                        <h3>Data Science</h3>
+                    </div>
+                    <div class="flip-box-back">
+                        <div class="flip-box-back-inner">
+                            <p>At Faiwes, Data Science leverages advanced analytics, machine learning, and visualization to extract 
+                                actionable insights from complex data, empowering businesses to make data-driven decisions for growth and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact-us" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>We'd love to hear from you! Send us a message and we'll get back to you as soon as possible.</p>
+            <div class="contact-form">
+                <form class="contact-form" id="contactForm" method="POST" action="http://localhost:5000/send_email">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="spinner" style="display:none;">Sending...</div>
+    <div id="confirmation-message" style="display: none; color: green; margin-top: 10px;">
+        Message sent successfully!
+    </div>
+    <div id="error-message" style="display: none; color: red; margin-top: 10px;">
+        Failed to send the message. Please try again later.
+    </div>
+
+    <div id="chat-icon" onclick="toggleChatbox()">💬</div>
+
+    <div id="chatbox" class="hidden">
+        <div id="chat-header">
+            <span>Chat</span>
+            <div>
+                <button onclick="minimizeChatbox()">-</button>
+                <button onclick="closeChatbox()">x</button>
+            </div>
+        </div>
+        <div id="chat-messages"></div>
+        <div id="chat-input">
+            <input id="user-input" type="text" placeholder="Type your message here..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+
+  
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Faiwes Technologies. All rights reserved.</p>
+            <p>Follow us on 
+                <a href="https://www.linkedin.com/company/faiwes-technologies" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+
+</body>
+</html>

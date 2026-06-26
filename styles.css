@@ -1,0 +1,628 @@
+/* General styles for the body and container */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    align-items: center;
+}
+
+/* Header styling (Fixed, Light Grey, and Transparent) */
+header {
+    background: rgba(211, 211, 211, 0.8); /* Light grey with slight transparency */
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed; /* Fixed header */
+    top: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top */
+    display: flex;
+    justify-content: space-between; 
+    height: 80px; /* Adjust height as needed */
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
+}
+
+/* Adjust h1 (logo) alignment */
+header h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 900;
+    color: #f3f5f8;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.header-section {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+}
+
+.header-image {
+    width: 180px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between image and text */
+}
+
+/* Class to change the header background when scrolled */
+header.scrolled {
+    background: rgba(211, 211, 211, 0.5); /* More transparent when scrolled */
+}
+
+.header {
+    margin: 0; /* Ensure no margin for the header */
+}
+
+/* Optional: Change color on hover */
+header h1:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+/* Navigation styles */
+/* Navigation styles */
+nav {
+    flex: 1;
+    text-align: center; /* Centers navigation inside the header */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex; /* Makes the list items align horizontally */
+    gap: 20px; /* Space between each nav item */
+    justify-content: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #333; /* Dark text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Change text color to blue on hover */
+}
+
+/* Dropdown styles */
+nav ul .dropdown {
+    display: none; /* Initially hide dropdown */
+    position: absolute; /* Position it below the parent */
+    top: 100%; /* Align it right below the parent item */
+    left: 0; /* Align it to the left of the parent */
+    background-color: #fff; /* Dropdown background color white */
+    z-index: 999; /* Keep it on top */
+    min-width: 250px; /* Minimum width for dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
+}
+
+/* Dropdown list items */
+nav ul .dropdown li {
+    width: 100%; /* Ensure each item takes full width */
+}
+
+/* Dropdown links */
+nav ul .dropdown li a {
+    display: block; /* Make link a block element */
+    padding: 10px 15px; /* Increase padding for a larger clickable area */
+    color: #333; /* Text color */
+    text-decoration: none; /* No underline */
+    border-bottom: 1px solid #eee; /* Optional: Add bottom border for separation */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    font-size: 14px; /* Adjust font size as necessary */
+    white-space: nowrap; /* Prevent text from wrapping to a new line */
+    width: 100%; /* Ensure the link takes the full width of its parent */
+}
+
+/* Hover effect for dropdown items */
+nav ul .dropdown li a:hover {
+    background-color: #007bff; /* Background blue on hover */
+    color: #fff; /* Change text color to white on hover */
+}
+
+/* Show dropdown on hover */
+.dropdown-parent:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+
+/* Hero section with image banner */
+.hero {
+    background: url('pexels-sora-shimazaki-5926397.jpg') no-repeat center center/cover;
+    height: calc(100vh - 60px); /* Full viewport height minus header height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* Ensure text is readable on the background */
+    margin-top: 0; /* Ensure there's no margin at the top */
+    padding: 0; /* Remove padding to start from the top */
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #0056b3;
+}
+
+.service-item {
+    margin: 20px 0;
+}
+
+/* Footer styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Flip box section styling */
+/* General styles for the body and container */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: visible;
+}
+
+/* Header styling (Fixed, Light Grey, and Transparent) */
+header {
+    background: rgba(211, 211, 211, 0.8); /* Light grey with slight transparency */
+    color: #fff;
+    padding: 10px 0;
+    position: fixed; /* Fixed header */
+    top: 0;
+    left: 0; /* Ensure it starts from the left */
+    width: 100%; /* Full width */
+    z-index: 9999; /* Ensure it stays on top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
+}
+
+/* Class to change the header background when scrolled */
+header.scrolled {
+    background: rgba(211, 211, 211, 0.5); /* More transparent when scrolled */
+}
+
+.header {
+    margin: 0; /* Ensure no margin for the header */
+}
+
+header h1 {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 40px; /* Increase font size for a bolder look */
+    font-weight: 900; /* Make the font bold */
+    display: inline-block;
+    color: #f3f5f8; /* Set a stylish blue color */
+    text-transform: uppercase; /* Make the text uppercase for emphasis */
+    letter-spacing: 2px; /* Add spacing between letters */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), /* Subtle shadow for depth */
+                 0 0 25px rgba(0, 123, 255, 0.5); /* Blue glow effect */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Optional: Change color on hover */
+header h1:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+/* Navigation styles */
+nav {
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+/* Style for the links in the navigation */
+nav ul li a {
+    color: #333; /* Dark text color */
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect to change text color to blue */
+nav ul li a:hover {
+    color: #007bff; /* Change text color to blue */
+}
+
+/* Dropdown styles */
+nav ul .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff; /* Dropdown background color white */
+    z-index: 999;
+    overflow: visible;
+}
+
+nav ul .dropdown li {
+    display: block;
+    width: 200px;
+}
+
+nav ul .dropdown li a {
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #333; /* Dropdown text color dark */
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for dropdown items */
+nav ul .dropdown li a:hover {
+    background-color: #007bff; /* Background blue on hover */
+    color: #fff; /* Text color white on hover */
+}
+
+/* Show dropdown on hover */
+.dropdown-parent:hover .dropdown {
+    display: block;
+}
+
+/* Hero section with image banner */
+.hero {
+    background: url('pexel.jpg') no-repeat center center/cover;
+    height: calc(100vh - 60px); /* Full viewport height minus header height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff; /* Ensure text is readable on the background */
+    margin-top: 0; /* Ensure there's no margin at the top */
+    padding: 0; /* Remove padding to start from the top */
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Sections (about, services, contact) */
+.about, .services, .contact-us {
+    padding: 0px 0;
+    text-align: center;
+}
+
+#about {
+    margin-top: 50px; /* Adjust this value based on your header height */
+    padding-top: 20px; /* Optional padding */
+}
+
+.service-item {
+    margin: 20px 0;
+}
+
+.section-title {
+    font-size: 32px; /* Adjust size as needed */
+    font-weight: bold; /* Optional: Make it bold */
+    color: hsl(0, 82%, 2%); /* Match with your theme */
+    margin-bottom: 20px; /* Space between title and flip boxes */
+    text-align: center; /* Center the text */
+}
+
+/* Flip box section styling */
+.flip-box-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.flip-box-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of boxes */
+    justify-content: center;
+    gap: 20px;
+}
+
+.flip-box {
+    width: calc(33.33% - 40px); /* Ensures 3 boxes per row with gap consideration */
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden; /* Ensure child elements don't overflow */
+}
+
+.flip-box-front {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+}
+
+/* Set unique images for each flip box front */
+.flip-box:nth-child(1) .flip-box-front {
+    background-image: url('dataengineering.webp');
+}
+
+.flip-box:nth-child(2) .flip-box-front {
+    background-image: url('dataanalytics.jpg');
+}
+
+.flip-box:nth-child(3) .flip-box-front {
+    background-image: url('businessdataanalytics.jpg');
+}
+
+.flip-box:nth-child(4) .flip-box-front {
+    background-image: url('Mobileapplications.jpg');
+}
+
+.flip-box:nth-child(5) .flip-box-front {
+    background-image: url('softwaretesting.webp'); /* Add image for 5th box */
+}
+
+.flip-box:nth-child(6) .flip-box-front {
+    background-image: url('DataScience.jpg'); /* Add image for 6th box */
+}
+
+.flip-box-back {
+    background-color: #e6ebf0;
+    color: hsl(0, 82%, 2%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+    padding: 20px; /* Adjust the value as needed for more or less gap */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+.flip-box-back-inner {
+    text-align: center;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .flip-box {
+        width: calc(50% - 20px); /* Two boxes per row for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-box {
+        width: 100%; /* One box per row for very small screens */
+        margin: 10px; /* Maintain margin for very small screens */
+    }
+}
+
+/* Contact section styling */
+.contact-section {
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+    padding: 15px 10px; /* Reduce padding */
+    text-align: center;
+    color: #333;
+}
+
+.contact-section h2 {
+    font-size: 24px; /* Reduced font size */
+    margin-top: 0; /* Reduce top margin to remove extra space */
+    margin-bottom: 8px; /* Reduced margin */
+    font-weight: bold;
+}
+
+.contact-section p {
+    font-size: 16px; /* Reduced font size */
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.contact-form {
+    max-width: 350px; /* Reduce form width */
+    margin: auto;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 8px; /* Reduced padding */
+    margin: 8px 0; /* Reduced margin */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px; /* Reduced font size */
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px; /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .contact-section h2 {
+        font-size: 22px; /* Further reduced for small screens */
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+        padding: 8px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+#chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#chatbox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#chatbox.hidden {
+    display: none;
+}
+
+#chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chat-header button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+#chat-header button:hover {
+    background-color: #003d82;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+#chat-input {
+    display: flex;
+    padding: 10px;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#chat-input button {
+    margin-left: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
