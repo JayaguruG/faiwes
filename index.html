@@ -11,6 +11,11 @@
     <header>
         <div class="container">
             <img src="FaiwesLogo1.jpg" alt="FAIWES" class="header-image">
+            <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul>
                     <li><a href="#home" id="home-link">HOME</a></li>
@@ -30,10 +35,11 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
-            <h2>Innovative Solutions for Your Business</h2>
-            <p>Transforming ideas into reality with cutting-edge technology.</p>
+            <p class="eyebrow">Faiwes Technologies</p>
+            <h1>Innovative Solutions for Your Business</h1>
+            <p>Transforming ideas into reliable digital products, data platforms, and modern applications.</p>
             <a href="#services" class="btn">Explore Our Services</a>
         </div>
     </section>
@@ -51,8 +57,8 @@
         </div>
     </section>
     
-    <section class="flip-box-section">
-        <h2 class="section-title">Our Specialties</h2> <!-- Change the text as needed -->
+    <section id="services" class="flip-box-section">
+        <h2 class="section-title">Our Specialties</h2>
         <div class="flip-box-container">
             <div class="flip-box">
                 <div class="flip-box-inner">
@@ -160,7 +166,7 @@
         Failed to send the message. Please try again later.
     </div>
 
-    <div id="chat-icon" onclick="toggleChatbox()">💬</div>
+    <button id="chat-icon" type="button" onclick="toggleChatbox()" aria-label="Open chat">Chat</button>
 
     <div id="chatbox" class="hidden">
         <div id="chat-header">

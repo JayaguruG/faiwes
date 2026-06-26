@@ -1,26 +1,22 @@
-document.getElementById('home-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent the default anchor click behavior
-    window.scrollTo({
-        top: 0, // Scroll to the top of the page
-        behavior: 'smooth' // Enable smooth scrolling
-    });
-});
+const body = document.body;
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelectorAll('nav a');
 
-document.getElementById('contact-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    const contactSection = document.getElementById('contact-us'); // Ensure you have the correct ID
-
-    if (contactSection) {
-        contactSection.scrollIntoView({
-            behavior: 'smooth' // Enable smooth scrolling
-        });
+function setMenuOpen(isOpen) {
+    body.classList.toggle('nav-open', isOpen);
+    if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     }
-});
+}
 
-document.getElementById('about-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default anchor behavior
-    const target = document.querySelector('#about');
-    const headerOffset = 100; // Adjust based on your header height
+function scrollToElement(target) {
+    if (!target) {
+        return;
+    }
+
+    const header = document.querySelector('header');
+    const headerOffset = header ? header.offsetHeight + 16 : 96;
     const elementPosition = target.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -28,6 +24,39 @@ document.getElementById('about-link').addEventListener('click', function(event) 
         top: offsetPosition,
         behavior: 'smooth'
     });
+}
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+        setMenuOpen(!body.classList.contains('nav-open'));
+    });
+}
+
+navLinks.forEach(function(link) {
+    link.addEventListener('click', function() {
+        setMenuOpen(false);
+    });
+});
+
+document.getElementById('home-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default anchor click behavior
+    setMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+document.getElementById('contact-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    const contactSection = document.getElementById('contact-us'); // Ensure you have the correct ID
+
+    setMenuOpen(false);
+    scrollToElement(contactSection);
+});
+
+document.getElementById('about-link').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent default anchor behavior
+    const target = document.querySelector('#about');
+    setMenuOpen(false);
+    scrollToElement(target);
 });
 function toggleChatbox() {
     const chatbox = document.getElementById("chatbox");
