@@ -113,34 +113,194 @@ function addMessageToChat(sender, message) {
     chatMessages.appendChild(messageElement);
     chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the latest message
 }
-
 function getBotResponse(message) {
-    const normalizedMessage = message.trim().toLowerCase();
 
-    // Keyword-based responses
-    if (normalizedMessage === "hi" || normalizedMessage === "hello") {
-        const responses = [
-            "Hi there! How can I assist you today?",
-            "Hello! What can I do for you?",
-            "Hey! Need any help?",
-        ];
-        return responses[Math.floor(Math.random() * responses.length)];
-    } else if (normalizedMessage.includes("how are you")) {
-        return "I'm just a bot, but I'm here to help!";
-    } else if (normalizedMessage.includes("help")) {
-        return "Sure! Please tell me what you need help with.";
-    } else if (normalizedMessage.includes("thank you")) {
-        return "You're welcome! Let me know if there's anything else.";
-    } else if (normalizedMessage.includes("bye")) {
-        return "Goodbye! Have a great day!";
+    const msg = message.trim().toLowerCase();
+
+    // Greetings
+    if (["hi","hello","hey","good morning","good afternoon","good evening"].includes(msg)) {
+        return "Hello! Welcome to Faiwes Technologies. How can I help you today?";
     }
 
-    // For unrecognized queries, provide an email address
-    const emailAddress = "faiwestechnologies@gmail.com";
-    //setTimeout(() => alert("Thank you"), 100); // Simulate delayed "thank you" message
-    return `Our team will contact you. Please reach out at ${emailAddress}.`;
+    // Company
+    if (msg.includes("who are you") ||
+        msg.includes("about") ||
+        msg.includes("company")) {
+
+        return "Faiwes Technologies is an IT consulting company providing Data Engineering, Cloud & DevOps, Software Development, Web Development, Software Testing, AI & Analytics solutions.";
+    }
+
+    // Services
+    if (msg.includes("service") || msg.includes("services")) {
+        return "We provide:\n\n• Data Engineering\n• Cloud & DevOps\n• Software Development\n• Web Development\n• Software Testing\n• AI & Analytics\n\nWhich service would you like to know more about?";
+    }
+
+    // Data Engineering
+    if (msg.includes("data")) {
+        return "Our Data Engineering services include ETL development, Data Warehousing, Data Lakes, Data Pipelines, Azure Data Factory, Databricks, Snowflake, SQL and Analytics.";
+    }
+
+    // Cloud
+    if (msg.includes("cloud") ||
+        msg.includes("aws") ||
+        msg.includes("azure")) {
+
+        return "We help businesses migrate and manage cloud platforms including AWS and Microsoft Azure. We also provide Infrastructure as Code, Automation and Cloud Operations.";
+    }
+
+    // DevOps
+    if (msg.includes("devops") ||
+        msg.includes("terraform") ||
+        msg.includes("docker") ||
+        msg.includes("kubernetes") ||
+        msg.includes("jenkins")) {
+
+        return "Our DevOps services include CI/CD pipelines, Terraform, Docker, Kubernetes, Jenkins, GitHub Actions and infrastructure automation.";
+    }
+
+    // Software Development
+    if (msg.includes("software")) {
+        return "We build enterprise software, APIs, business applications and custom solutions based on your business requirements.";
+    }
+
+    // Website
+    if (msg.includes("website") ||
+        msg.includes("web")) {
+
+        return "Yes. We develop responsive business websites, company portfolios, web applications and custom web solutions.";
+    }
+
+    // Testing
+    if (msg.includes("testing") ||
+        msg.includes("qa") ||
+        msg.includes("automation")) {
+
+        return "We provide Manual Testing, Automation Testing, API Testing, Regression Testing, Performance Testing and Quality Assurance services.";
+    }
+
+    // AI
+    if (msg.includes("ai") ||
+        msg.includes("artificial intelligence") ||
+        msg.includes("machine learning")) {
+
+        return "We help businesses implement AI-powered solutions, automation and analytics to improve productivity and decision making.";
+    }
+
+    // Quote
+    if (msg.includes("price") ||
+        msg.includes("cost") ||
+        msg.includes("quotation") ||
+        msg.includes("quote")) {
+
+        return "Project pricing depends on the scope and requirements. Please submit your requirements through our contact form and our team will provide a customized quotation.";
+    }
+
+    // Contact
+    if (msg.includes("contact") ||
+        msg.includes("email") ||
+        msg.includes("phone")) {
+
+        return "You can contact us at:\n\n📧 faiwestechnologies@gmail.com\n\nor submit the Contact Us form on this website.";
+    }
+
+    // Location
+    if (msg.includes("location") ||
+        msg.includes("where")) {
+
+        return "We provide remote IT consulting services for clients across different locations.";
+    }
+
+    // Careers
+    if (msg.includes("career") ||
+        msg.includes("job") ||
+        msg.includes("vacancy")) {
+
+        return "We are always interested in connecting with talented professionals. Please email your resume to faiwestechnologies@gmail.com.";
+    }
+
+    // Time
+    if (msg.includes("working hours") ||
+        msg.includes("business hours")) {
+
+        return "Our team typically responds to enquiries within one business day.";
+    }
+
+    // Thanks
+    if (msg.includes("thank")) {
+        return "You're welcome! If you have any other questions, feel free to ask.";
+    }
+
+    // Bye
+    if (msg.includes("bye")) {
+        return "Thank you for visiting Faiwes Technologies. Have a great day!";
+    }
+    // Positive responses
+if (
+    msg === "ok" ||
+    msg === "okay" ||
+    msg === "fine" ||
+    msg === "cool" ||
+    msg === "great" ||
+    msg === "good" ||
+    msg === "nice" ||
+    msg === "awesome" ||
+    msg === "perfect"
+) {
+
+    const replies = [
+        "Great! Is there anything else I can help you with?",
+        "Happy to help! Feel free to ask any questions.",
+        "Glad to hear that. What would you like to know next?",
+        "Excellent! Let me know if you need any additional information.",
+        "Sure! I'm here if you need anything else."
+    ];
+
+    return replies[Math.floor(Math.random() * replies.length)];
 }
 
+// Waiting
+if (
+    msg.includes("wait") ||
+    msg.includes("hold on") ||
+    msg.includes("one minute") ||
+    msg.includes("give me a minute")
+) {
+
+    return "No problem. I'll be here whenever you're ready.";
+}
+
+// Thinking
+if (
+    msg.includes("let me think") ||
+    msg.includes("i'll think") ||
+    msg.includes("let me check")
+) {
+
+    return "Of course. Take your time. Let me know if you have any questions.";
+}
+
+// Yes
+if (
+    msg === "yes" ||
+    msg === "yeah" ||
+    msg === "yup"
+) {
+
+    return "Great! Please let me know how I can assist you further.";
+}
+
+// No
+if (
+    msg === "no" ||
+    msg === "nope"
+) {
+
+    return "No worries. If you change your mind or need any assistance later, we're here to help.";
+}
+
+    // Default response
+    return "\nI can help with:\n\n• Our Services\n• Data Engineering\n• Cloud & DevOps\n• Software Development\n• Web Development\n• Software Testing\n• AI & Analytics\n• Pricing\n• Contact Information\n\nOr email us at faiwestechnologies@gmail.com.";
+}
 
 // Event listener for Enter key to send the message
 document.getElementById('user-input').addEventListener('keypress', function(event) {
