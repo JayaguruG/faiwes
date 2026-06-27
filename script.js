@@ -149,34 +149,49 @@ document.getElementById('user-input').addEventListener('keypress', function(even
     }
 });
 
-document.getElementById('contactForm').onsubmit = async function (event) {
-    event.preventDefault();
+// ================================
+// EmailJS Initialization
+// ================================
 
-    document.getElementById('spinner').style.display = 'inline';
-    document.getElementById('confirmation-message').style.display = 'none';
-    document.getElementById('error-message').style.display = 'none';
+emailjs.init({
+    publicKey: "5icm2b7GlneHQbOt8"
+});
 
-    const formData = new FormData(event.target);
+// ================================
+// Contact Form
+// ================================
 
-    try {
-        const response = await fetch(event.target.action, {
-            method: 'POST',
-            body: formData
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const submitBtn = document.getElementById("submitBtn");
+        const status = document.getElementById("status");
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Sending...";
+        const templateParams = {
+            from_name: document.getElementById("name").value,
+            from_email: document.getElementById("email").value,
+            message: document.getElementById("message").value
+        };
+        emailjs.send(
+            "service_00fqi9o",
+            "template_2a3dvx5",
+            templateParams
+        )
+        .then(function () {
+            status.innerHTML = "✅ Message sent successfully.";
+            status.style.color = "green";
+            contactForm.reset();
+        })
+        .catch(function (error) {
+            console.error(error);
+            status.innerHTML = "❌ Failed to send message.";
+            status.style.color = "red";
+        })
+        .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = "Send Message";
         });
-
-        console.log("Response status:", response.status);
-
-        if (response.ok) {
-            document.getElementById('confirmation-message').style.display = 'block';
-            event.target.reset(); // Clear form
-        } else {
-            console.error("Server returned error status:", response.status);
-            document.getElementById('error-message').style.display = 'block';
-        }
-    } catch (error) {
-        console.error('Failed to send the message:', error);
-        document.getElementById('error-message').style.display = 'block';
-    } finally {
-        document.getElementById('spinner').style.display = 'none';
-    }
-};
+    });
+}

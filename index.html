@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Faiwes Technologies</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <link rel="stylesheet" href="styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/> <!-- Google Fonts -->
 </head>
 <body>
     <header>
         <div class="container">
-            <img src="FaiwesLogo1.jpg" alt="FAIWES" class="header-image">
+            <img src="FaiwesLogo1.jpg" alt="FAIWES" class="header-image"/>
             <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -142,21 +142,39 @@
             </div>
         </div>
     </section>
-    
-    <section id="contact-us" class="contact-section">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>We'd love to hear from you! Send us a message and we'll get back to you as soon as possible.</p>
-            <div class="contact-form">
-                <form class="contact-form" id="contactForm" method="POST" action="http://localhost:5000/send_email">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+
+	<section id="contact-us" class="contact-section">
+		<div class="container">
+			<h2>Get in Touch</h2>
+			<p>
+				We'd love to hear from you! Send us a message and we'll get back to you as soon as possible.
+			</p>
+			<div class="contact-form">
+				<form id="contactForm">
+				<input
+					type="text"
+					id="name"
+					placeholder="Your Name"
+					required=""/>
+				<input
+					type="email"
+					id="email"
+					placeholder="Your Email"
+					required=""/>
+				<textarea
+					id="message"
+					placeholder="Your Message"
+					required=""></textarea>
+				<button
+					type="submit"
+					id="submitBtn">
+					Send Message
+				</button>
+				</form>
+				<p id="status"></p>
+			</div>
+		</div>
+	</section>
 
     <div id="spinner" style="display:none;">Sending...</div>
     <div id="confirmation-message" style="display: none; color: green; margin-top: 10px;">
@@ -194,7 +212,8 @@
         </div>
     </footer>
 
-    <script src="script.js"></script> <!-- Link to your JavaScript file -->
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script src="script.js"></script> <!-- Link to your JavaScript file -->
 
 </body>
 </html>
